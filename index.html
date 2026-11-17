@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Реєстрація на IT-зустріч</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container py-5">
+      <span class="badge text-bg-warning mb-3">IT-зустріч</span>
+      <h1 class="display-5 fw-bold">JavaScript з нуля: перший інтерактивний сайт</h1>
+      <p class="lead hero-text mt-3">
+        Практична зустріч для початківців: розберемо змінні, арифметику та умови
+        if/else і зберемо власну сторінку реєстрації на Bootstrap 5.
+      </p>
+      <div class="row g-3 mt-2">
+        <div class="col-md-6">
+          <div class="info-chip">
+            <span class="info-label">Дата</span>
+            <strong>28 листопада 2026, 18:00</strong>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="info-chip">
+            <span class="info-label">Місце</span>
+            <strong>Київ, «Хрещатик Hub», вул. Хрещатик, 22</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container py-5">
+    <div class="row g-4">
+      <section class="col-lg-6">
+        <div class="card shadow-sm h-100">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-1">Реєстрація на подію</h2>
+            <p class="text-secondary mb-4">
+              Заповніть ім’я, email і кількість учасників. Перевірка виконується у JavaScript.
+            </p>
+
+            <form id="register-form" novalidate>
+              <div class="mb-3">
+                <label class="form-label" for="name">Ім’я</label>
+                <input class="form-control" id="name" name="name" type="text" autocomplete="name">
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" id="email" name="email" type="email" autocomplete="email">
+              </div>
+              <div class="mb-4">
+                <label class="form-label" for="participants">Кількість учасників</label>
+                <input class="form-control" id="participants" name="participants" type="number" min="1" step="1" value="1">
+              </div>
+              <button class="btn btn-primary w-100" type="submit">Зареєструватися</button>
+            </form>
+
+            <div id="register-message" class="alert mt-3 d-none" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-lg-6">
+        <div class="card shadow-sm h-100">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-1">Калькулятор вартості квитків</h2>
+            <p class="text-secondary mb-4">
+              Standard — 400 грн, VIP — 800 грн. Знижка 10% за 3–4 квитки і 20% за 5 або більше.
+              Промокод <strong>EVENT50</strong> віднімає 50 грн після відсоткової знижки.
+            </p>
+
+            <form id="calculator-form" novalidate>
+              <div class="mb-3">
+                <label class="form-label" for="category">Категорія квитка</label>
+                <select class="form-select" id="category" name="category">
+                  <option value="standard">Standard — 400 грн</option>
+                  <option value="vip">VIP — 800 грн</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="tickets">Кількість квитків</label>
+                <input class="form-control" id="tickets" name="tickets" type="number" min="1" step="1" value="2">
+              </div>
+              <div class="mb-4">
+                <label class="form-label" for="promo">Промокод</label>
+                <input class="form-control" id="promo" name="promo" type="text" placeholder="EVENT50" autocomplete="off">
+              </div>
+              <button class="btn btn-success w-100" type="submit">Розрахувати</button>
+            </form>
+
+            <div id="calc-message" class="alert alert-danger mt-3 d-none" role="status" aria-live="polite"></div>
+
+            <div id="calc-result" class="result-box mt-3 d-none">
+              <h3 class="h6 text-secondary mb-3">Детальний розрахунок</h3>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Категорія</span>
+                  <strong id="result-category"></strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Ціна одного квитка</span>
+                  <strong id="result-price"></strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Кількість</span>
+                  <strong id="result-count"></strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Початкова вартість</span>
+                  <strong id="result-base"></strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Знижка за кількість</span>
+                  <strong id="result-discount"></strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Промокод</span>
+                  <strong id="result-promo"></strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between total-row">
+                  <span>До сплати</span>
+                  <strong id="result-total"></strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

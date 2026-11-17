@@ -1,0 +1,45 @@
+body {
+  background: #f3f6fb;
+  color: #1c2838;
+}
+
+.hero {
+  background: linear-gradient(135deg, #123055 0%, #1f6feb 100%);
+  color: #ffffff;
+}
+
+.hero-text {
+  max-width: 42rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.info-chip {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+}
+
+.info-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.2rem;
+}
+
+.result-box {
+  border: 1px solid #d9e2ef;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem 0.25rem;
+  background: #f8fbff;
+}
+
+.total-row {
+  font-size: 1.1rem;
+}
+
+#result-total {
+  color: #0d6e3f;
+}
